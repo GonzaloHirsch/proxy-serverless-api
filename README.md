@@ -42,16 +42,7 @@ functions:
 After successful deployment, you can invoke the deployed function by using the following command:
 
 ```bash
-serverless invoke --function hello
-```
-
-Which should result in response similar to the following:
-
-```json
-{
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v3.0! Your function executed successfully!\",\n  \"input\": {}\n}"
-}
+serverless invoke --function getProxy
 ```
 
 ### Local development
@@ -59,14 +50,9 @@ Which should result in response similar to the following:
 You can invoke your function locally by using the following command:
 
 ```bash
-serverless invoke local --function hello
+serverless invoke local --function getProxy --path test.json
 ```
 
-Which should result in response similar to the following:
+### Environment
 
-```
-{
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v3.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
-}
-```
+A `.env` file is required to contain a variable `DB_NAME` for the name of the DynamoDB table.

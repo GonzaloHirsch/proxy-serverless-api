@@ -1,0 +1,9 @@
+    {
+        "resource": "/{name}",
+        "path": "/",
+        "routeKey": "GET /{name}",
+        "httpMethod": "GET",
+        "pathParameters": {
+            "name": "letterboxd"
+        }
+    }
