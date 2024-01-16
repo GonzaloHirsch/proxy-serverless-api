@@ -15,6 +15,13 @@ exports.handler = async (event, context) => {
       case "GET /{name}":
         if (!event.pathParameters.name) {
           throw new Error('Missing name parameter.');
+        } else if (event.pathParameters.name === 'robots.txt') {
+          body = "User - agent: *\nDisallow: /"
+          return {
+            statusCode,
+            body,
+            headers
+          };
         }
         // Get the dynamo key
         body = await dynamo
